@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const MyHobbies = () => (
+const PersonalInterests = () => (
     <Layout>
         <SEO title="Yixiao Chen's hobby, as a front end web developer" />
 
@@ -14,4 +14,4 @@ const MyHobbies = () => (
     </Layout>
 );
 
-export default MyHobbies
+export default PersonalInterests

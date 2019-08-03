@@ -4,7 +4,7 @@ import { Link,StaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Projects = () => (
+const Portfolio = () => (
     <StaticQuery
         query={graphql`
      {
@@ -40,4 +40,4 @@ function getProjects(data) {
     return projectsArray;
 }
 
-export default Projects
+export default Portfolio
