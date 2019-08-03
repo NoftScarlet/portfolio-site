@@ -4,7 +4,7 @@ My portfolio website built with Gatsby and Grav.
 ## Home
 To be updated
 
-## Projects
+## Portfolio
 To be updated
 
 ## When I'm off work
