@@ -2,13 +2,13 @@
 My portfolio website built with Gatsby and Grav. 
 
 ## Home
-To be updated
+Has a simple greeting. Will add introduction.
 
 ## Portfolio
-To be updated
+Has a list of my past projects
 
 ## When I'm off work
-To be updated
+Talks about my personal interests
 
 ## Contact
 To be updated
