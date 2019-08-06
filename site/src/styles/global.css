@@ -1,7 +1,20 @@
 #gatsby-focus-wrapper {
     background-color: #f4f8fb;
 }
+.container {
+    max-width: 1080px!important;
+}
+.header-nav {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
 
 .lang-sw {
     border-left: 1px solid #fff;
+}
+
+.project-card {
+    width: 50%;
+    float: left;
 }
