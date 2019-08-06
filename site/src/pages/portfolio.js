@@ -1,8 +1,11 @@
 import React from "react"
 import { Link,StaticQuery, graphql } from "gatsby"
+import {Row, Col} from "reactstrap"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import NavCards from "../components/nav-cards"
+import ProjectDetails from "../components/project-details"
 
 const Portfolio = () => (
     <StaticQuery
@@ -21,7 +24,15 @@ const Portfolio = () => (
             <Layout>
                 <SEO title="Yixiao Chen's work project, as a front end web developer" />
                 <>
-                <ul>{getProjects(data)}</ul>
+                    <Row>
+                        <Col md="6">
+                            <ProjectDetails title={} description={} img={} type={} source_code={} />
+                        </Col>
+                        <Col md="6">
+                            <NavCards />
+                        </Col>
+                    </Row>
+
                 </>
                 <Link to="/">Go back to the homepage</Link>
 
@@ -32,12 +43,5 @@ const Portfolio = () => (
 
 );
 
-function getProjects(data) {
-    const projectsArray = [];
-    data.allProjectsJson.edges.forEach(item=>
-        projectsArray.push(<li key={item.node.title}>{item.node.title}</li>)
-    );
-    return projectsArray;
-}
 
 export default Portfolio
