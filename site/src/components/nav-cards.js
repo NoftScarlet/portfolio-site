@@ -1,20 +1,62 @@
 import React from 'react';
-import { Card, Button, CardHeader, CardFooter, CardBody,
-    CardTitle, CardText } from 'reactstrap';
+import {
+    Card, Button, CardHeader, CardFooter, CardBody, CardImg,
+    CardTitle, CardText
+} from 'reactstrap';
 
-const NavCards = (props) => {
-    return (
-        <div>
-            <Card body className="text-center">
-                <CardHeader tag="h3">Featured</CardHeader>
+import {Link, StaticQuery, graphql} from "gatsby"
+
+
+const NavCards = (props) => (
+    <StaticQuery
+        query={graphql`
+     {
+        allProjectsJson {
+          edges{
+          node{
+          id
+          title
+          link
+          description
+          type
+          implementation
+          source_code
+          }
+          }
+        }
+     }
+    `}
+        render={data => (
+            <>
+            {getProjects(data)}
+            </>
+        )}
+    />
+
+);
+
+function getProjects(data) { //helpler function to iterate over object and push elements into array
+
+
+    const elemArray = [];
+
+    data.allProjectsJson.edges.forEach(item =>
+        elemArray.push(
+            <Card className="project-card">
+                <CardImg top width="100%"
+                         src={item.node.src}
+                         alt="Yixiao project card"/>
                 <CardBody>
-                    <CardTitle>Special Title Treatment</CardTitle>
-                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                    <Button>Go somewhere</Button>
+                    <CardTitle>{item.node.title}</CardTitle>
+                    <CardText>{item.node.description}</CardText>
+                    <Button>Button</Button>
                 </CardBody>
             </Card>
-        </div>
+        )
     );
-};
+
+    return elemArray;
+}
+
 
 export default NavCards;
